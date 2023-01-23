@@ -11,7 +11,7 @@
 - Run `neofetch` in your terminal
 - Time starts on first keystroke inside of installation environment
 - Time ends on `neofetch + Enter` being put into terminal
-- Anything is allowed but external tools (running on another system, like SSH or AutoHotkey)
+- Anything is allowed but external tools (running on another system, like SSH or AutoHotkey, `curl`ing an external script, etc)
 
 
 ## Usable% Guide
