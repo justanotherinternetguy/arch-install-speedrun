@@ -97,58 +97,24 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 
 # PROTOTYPING (this may NOT work)
 
-follow above until pane 2
-
-```bash
-pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
-
-
 ```
-```bash
-genfstab -U /mnt >> /mnt/etc/fstab
-```
-
-```bash
-arch-chroot /mnt grub -e "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a:"
-```
-
-`reboot`
-
-`root`
-
-`a`
-
-`xinit`
-
-`neofetch`
-
-`firefox`
-
-![image](https://user-images.githubusercontent.com/96833060/214194483-571c2b6b-14c6-41e8-8301-fae8511a263c.png)
-
-```
-gdisk /dev/sda
-`n | end sector: +1m | ef02`
-`n`
-`w`
-mkfs.ext4 /dev/sda2
-mount /dev/sda2 /mnt
+echo "n\n\n1\n\n\nw\n" | fdisk /dev/sda
+mkfs.xfs /dev/sda1
+mount /dev/sda1 /mnt
 vim /etc/pacman.conf
-`/para enter 0x :wq`
+`/Par enter 0x :wq`
 tmux
-`ctrl b %`
-pacman -Sy archlinux-keyring
 pacstrap -K /mnt base linux linux-firmware grub
+`ctrl b %`
+`ctrl b %`
 `ctrl b o`
 pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
 `ctrl b o`
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
-`grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-systemctl enable NetworkManger
-passwd a a`
+arch-chroot /mnt bash -e "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a"
 reboot
+root
+a
 xinit
 neofetch firefox
 ```
