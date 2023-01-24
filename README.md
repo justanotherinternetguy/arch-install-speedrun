@@ -184,3 +184,4 @@ neofetch firefox
 ### credit
 - https://hackmd.io/@davidak/linux-install-speedrun - for the idea
 - https://gist.github.com/MaFeLP/3bd2484299a71ec967630c1155ad8d1f - for the code, my and my friends are working on optimizing it even more
+- my friend https://github.com/AshOnDiscord for helping me optimize
