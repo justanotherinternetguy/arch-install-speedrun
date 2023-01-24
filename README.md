@@ -97,8 +97,51 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 - firefox + `ctrl` + `l` + `f`
 - konsole + `neofetch`
 
+# IN SHORT
+`gdisk /dev/sda`
+
+`n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
+
+`n` + 5 * `Enter`
+
+`w` + `Enter` + `y` + `Enter`
+
+```bash
+mkfs.ext4 /dev/sda2
+```
 
 
+```bash
+mount /dev/sda2 /mnt
+```
+
+```bash
+pacstrap /mnt base linux linux-firmware grub
+```
+
+```bash
+pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
+```
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+```bash
+arch-chroot /mnt
+```
+
+```bash
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+systemctl enable NetworkManger
+passwd a a
+```
+
+`reboot`
+
+`xinit`
+
+`neofetch firefox`
 
 ### credit
 - https://hackmd.io/@davidak/linux-install-speedrun - for the idea
