@@ -82,7 +82,7 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --target=i386-pc
 ```
 
-``bash
+```bash
  /dev/sda; grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManager;EDITOR=vim visudo;
 ```
 
