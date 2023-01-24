@@ -96,58 +96,33 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 - konsole + `neofetch`
 
 # PROTOTYPING (this may NOT work)
-`gdisk /dev/sda`
 
-`n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
-
-`n` + 5 * `Enter`
-
-`w` + `Enter` + `y` + `Enter`
-
-```bash
-mkfs.ext4 /dev/sda2
-```
-
-
-```bash
-mount /dev/sda2 /mnt
-```
-
-```bash
-vim /etc/pacman.conf
-```
-
-```
-TMUX
-```
-
-```bash
-pacstrap /mnt base linux linux-firmware grub
-```
+follow above until pane 2
 
 ```bash
 pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
+
+
 ```
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ```bash
-arch-chroot /mnt
-```
-
-```bash
-grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-systemctl enable NetworkManger
-passwd a a
+arch-chroot /mnt grub -e "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a:"
 ```
 
 `reboot`
 
+`root`
+
+`a`
+
 `xinit`
 
-`neofetch firefox`
+`neofetch`
+
+`firefox`
 
 ![image](https://user-images.githubusercontent.com/96833060/214194483-571c2b6b-14c6-41e8-8301-fae8511a263c.png)
 
