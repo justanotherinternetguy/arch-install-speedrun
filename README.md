@@ -23,25 +23,23 @@
 
 - Format
 ```bash
-gdisk /dev/sda
+fdisk /dev/sda
 ```
 
-`n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
+`n` + 2 * `Enter` + `1` + 3 * `Enter`
 
-`n` + 5 * `Enter`
-
-`w` + `Enter` + `y` + `Enter`
+`w` + `Enter`
 
 - Fileystem
 
 ```bash
-mkfs.ext4 /dev/sda2
+mkfs.xfs /dev/sda2
 ```
 
 - Mount
 
 ```bash
-mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt
 ```
 
 - Parallel downloads, faster
