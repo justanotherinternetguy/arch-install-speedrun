@@ -68,10 +68,6 @@ pacstrap /mnt base linux linux-firmware grub
 ```bash
 pacstrap /mnt xorg-server sddm plasma-meta sudo konsole firefox vim neofetch
 ```
-```bash
-pacstrap /mnt xorg-server sddm sudo <WM/DE> firefox vim neofetch
-```
-
 
 - Pane 3
 ```bash
