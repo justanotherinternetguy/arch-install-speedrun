@@ -104,4 +104,5 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 
 
 ### credit
-- https://hackmd.io/@davidak/linux-install-speedrun
+- https://hackmd.io/@davidak/linux-install-speedrun - for the idea
+- https://gist.github.com/MaFeLP/3bd2484299a71ec967630c1155ad8d1f - for the code, my and my friends are working on optimizing it even more
