@@ -23,25 +23,23 @@
 
 - Format
 ```bash
-gdisk /dev/sda
+fdisk /dev/sda
 ```
 
-`n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
+`n` + 2 * `Enter` + `1` + 3 * `Enter`
 
-`n` + 5 * `Enter`
-
-`w` + `Enter` + `y` + `Enter`
+`w` + `Enter`
 
 - Fileystem
 
 ```bash
-mkfs.ext4 /dev/sda2
+mkfs.xfs /dev/sda2
 ```
 
 - Mount
 
 ```bash
-mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt
 ```
 
 - Parallel downloads, faster
@@ -98,84 +96,25 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 - konsole + `neofetch`
 
 # PROTOTYPING (this may NOT work)
-`gdisk /dev/sda`
 
-`n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
-
-`n` + 5 * `Enter`
-
-`w` + `Enter` + `y` + `Enter`
-
-```bash
-mkfs.ext4 /dev/sda2
 ```
-
-
-```bash
-mount /dev/sda2 /mnt
-```
-
-```bash
+echo "n\n\n1\n\n\nw\n" | fdisk /dev/sda
+mkfs.xfs /dev/sda1
+mount /dev/sda1 /mnt
 vim /etc/pacman.conf
-```
-
-```
-TMUX
-```
-
-```bash
-pacstrap /mnt base linux linux-firmware grub
-```
-
-```bash
-pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
-```
-```bash
-genfstab -U /mnt >> /mnt/etc/fstab
-```
-
-```bash
-arch-chroot /mnt
-```
-
-```bash
-grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-systemctl enable NetworkManger
-passwd a a
-```
-
-`reboot`
-
-`xinit`
-
-`neofetch firefox`
-
-![image](https://user-images.githubusercontent.com/96833060/214194483-571c2b6b-14c6-41e8-8301-fae8511a263c.png)
-
-```
-gdisk /dev/sda
-`n | end sector: +1m | ef02`
-`n`
-`w`
-mkfs.ext4 /dev/sda2
-mount /dev/sda2 /mnt
-vim /etc/pacman.conf
-`/para enter 0x :wq`
+`/Par enter 0x :wq`
 tmux
-`ctrl b %`
-pacman -Sy archlinux-keyring
 pacstrap -K /mnt base linux linux-firmware grub
+`ctrl b %`
+`ctrl b %`
 `ctrl b o`
 pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
 `ctrl b o`
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
-`grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-systemctl enable NetworkManger
-passwd a a`
+arch-chroot /mnt bash -e "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a"
 reboot
+root
+a
 xinit
 neofetch firefox
 ```
