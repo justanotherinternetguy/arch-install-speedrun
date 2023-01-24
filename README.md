@@ -68,10 +68,8 @@ pacstrap /mnt base linux linux-firmware grub
 ```bash
 pacstrap /mnt xorg-server sddm plasma-meta sudo konsole firefox vim neofetch
 ```
-- OR `xfce`
-- OR (i have this for prototyping)
 ```bash
-pacstrap /mnt xorg-server sddm sudo lxqt firefox vim neofetch
+pacstrap /mnt xorg-server sddm sudo <WM/DE> firefox vim neofetch
 ```
 
 - Pane 3
