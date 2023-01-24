@@ -12,6 +12,7 @@
 - Time starts on first keystroke inside of installation environment
 - Time ends on `neofetch + Enter` being put into terminal
 - Anything is allowed but external tools (running on another system, like SSH or AutoHotkey, `curl`ing an external script, etc)
+- YOU ARE ALLOWED to run a `ping google.com` before starting time just to check you have connectivity in the live environment
 
 
 ## Usable% Guide
