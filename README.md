@@ -50,7 +50,7 @@ mount /dev/sda2 /mnt
 vim /etc/pacman.conf
 ```
 
-`/Para` + `Enter` + `0x` + `:wq`
+`/Par` + `Enter` + `0x` + `:wq`
 
 - Open tmux (you can type/get ready other commands as one command runs)
 
