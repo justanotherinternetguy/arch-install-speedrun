@@ -97,7 +97,7 @@ genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --targ
 - firefox + `ctrl` + `l` + `f`
 - konsole + `neofetch`
 
-# IN SHORT
+# PROTOTYPING (this may NOT work)
 `gdisk /dev/sda`
 
 `n` + 3 * `Enter` + `+1M` + `Enter` + `ef02` + `Enter`
