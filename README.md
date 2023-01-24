@@ -72,9 +72,6 @@ pacstrap /mnt xorg-server sddm plasma-meta sudo konsole firefox vim neofetch
 pacstrap /mnt xorg-server sddm sudo <WM/DE> firefox vim neofetch
 ```
 
-```bash
-pacstrap /mnt xorg firefox vim neofetch xterm xorg-xinit networkmanager
-```
 
 - Pane 3
 ```bash
