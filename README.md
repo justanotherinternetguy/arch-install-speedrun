@@ -77,6 +77,7 @@ pacstrap /mnt xorg-server sddm sudo <WM/DE> firefox vim neofetch
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --target=i386-pc /dev/sda; grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManager;EDITOR=vim visudo;systemctl enable sddm; useradd -mG wheel user;passwd user';reboot
 ```
+## splits
 
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab; arch-chroot /mnt bash -c 'grub-install --target=i386-pc
