@@ -151,6 +151,36 @@ passwd a a
 
 `neofetch firefox`
 
+![image](https://user-images.githubusercontent.com/96833060/214194483-571c2b6b-14c6-41e8-8301-fae8511a263c.png)
+
+```
+gdisk /dev/sda
+`n | end sector: +1m | ef02`
+`n`
+`w`
+mkfs.ext4 /dev/sda2
+mount /dev/sda2 /mnt
+vim /etc/pacman.conf
+`/para enter 0x :wq`
+tmux
+`ctrl b %`
+pacman -Sy archlinux-keyring
+pacstrap -K /mnt base linux linux-firmware grub
+`ctrl b o`
+pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
+`ctrl b o`
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+`grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+systemctl enable NetworkManger
+passwd a a`
+reboot
+xinit
+neofetch firefox
+```
+
+
 ### credit
 - https://hackmd.io/@davidak/linux-install-speedrun - for the idea
 - https://gist.github.com/MaFeLP/3bd2484299a71ec967630c1155ad8d1f - for the code, my and my friends are working on optimizing it even more
