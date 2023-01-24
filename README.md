@@ -116,6 +116,14 @@ mount /dev/sda2 /mnt
 ```
 
 ```bash
+vim /etc/pacman.conf
+```
+
+```
+TMUX
+```
+
+```bash
 pacstrap /mnt base linux linux-firmware grub
 ```
 
