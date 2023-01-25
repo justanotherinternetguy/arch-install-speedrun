@@ -111,7 +111,7 @@ pacstrap -K /mnt base linux linux-firmware grub
 pacstrap /mnt xorg xorg-xinit neofetch networkmanager firefox xterm
 `ctrl b o`
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt bash -e "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a"
+arch-chroot /mnt bash -c "grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg;systemctl enable NetworkManger;passwd a a"
 reboot
 root
 a
