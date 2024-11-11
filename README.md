@@ -4,7 +4,6 @@
 
 ## Usable%
 - Install official Arch Linux, ISO downloaded from archlinux.org
-- CANNOT use `archinstall`
 - CANNOT copy/paste (i.e each character must be typed out by hand)
 - Virtuabox/VMs are allowed
 - After installing, you must open a browser and google something to prove internet connectivity
